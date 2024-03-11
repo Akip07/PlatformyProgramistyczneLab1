@@ -15,9 +15,24 @@ namespace ConsoleApp6
 
         public Item(int id,int value, int weight)
         {
+            
             this.id = id;
-            this.weight = weight;
-            this.value = value;
+            if (value > 0)
+            {
+                this.value = value;
+            }
+            else
+            {
+                this.value = 0;
+            }
+            if (weight > 0)
+            {
+                this.weight = weight;
+            }
+            else 
+            { 
+                this.weight= 0;
+            }
             this.ratio = (float)weight/(float)value;
         }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-[assembly: InternalsVisibleTo("TestProject1")]
+[assembly: InternalsVisibleTo("TestProject1"), InternalsVisibleTo("WinFormsApp1")]
 
 namespace ConsoleApp6
 {
@@ -16,7 +16,10 @@ namespace ConsoleApp6
 
         public Backpack(int n, int seed)
         {
-            this.n = n;
+            if (n < 0)
+                this.n = n;
+            else
+                this.n = 0;
             this.seed = seed;
             Random random = new Random(seed);
             for (int i = 0; i < n; i++)
@@ -29,10 +32,10 @@ namespace ConsoleApp6
 
         override public string ToString()
         {
-            string str =  $"List seed: {seed}\nnumber of items: {n}\n";
+            string str =  $"List seed: {seed}\r\nnumber of items: {n}\r\n";
             for (int i = 0;i < items.Count;i++)
             {
-                str += $"item {items[i].getId()}\tweight: {items[i].GetWeight()}\tvalue: {items[i].GetValue()}\n";
+                str += $"item {items[i].getId()}\r\tweight: {items[i].GetWeight()}\r\tvalue: {items[i].GetValue()}\r\n";
             }
             return str;
         }

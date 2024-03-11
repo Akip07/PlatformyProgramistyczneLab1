@@ -8,7 +8,7 @@ namespace ConsoleApp6
 {
     internal class Result
     {
-        List<int> itemsId = new List<int>();
+        protected internal List<int> itemsId = new List<int>();
         int totalWeight = 0;
         int totalValue = 0;
 
@@ -23,7 +23,7 @@ namespace ConsoleApp6
         }
         override public string ToString()
         {
-            string str = $"RESULT \nTotal weight:\t{totalWeight}\nTotal value:\t{totalValue}\nItem list:\t";
+            string str = $"RESULT \r\nTotal weight:\t{totalWeight}\r\nTotal value:\t{totalValue}\r\nItem list:\t";
             for (int i = 0; i < itemsId.Count; i++)
             {
                 str += $"{itemsId[i]}\t";
